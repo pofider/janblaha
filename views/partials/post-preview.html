@@ -1,0 +1,39 @@
+﻿<div class="row">
+    <div class="span12">
+        <div class="panel">
+            <div class="panel-header bg-lightBlue fg-white">
+                <a href="{{url}}" class="fg-white">{{title}}</a>
+            </div>
+            <div class="padding10">
+                <span class="post-date">{{toLongDate date}}</span>
+                
+                {{#each tags}}
+                    <a href="/tag/{{this}}" class="bg-cyan fg-white padding5">{{this}}</a>
+                {{/each}}
+            </div>
+            <div class="panel-content">
+                {{{preview}}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<article class="content-item blog-post">
+        <header>
+            <h1><a href="{{url}}">{{title}}</a></h1>
+            <p class="tags">
+                <span>Tags:</span>
+                {{#each this.tags}}
+                <a href="/tag/{{this}}">{{this}}</a>
+                {{/each}}
+            </p>
+
+            <div class="metadata">
+                <div class="published">{{toLongDate date}}</div>
+            </div>
+        
+            <div>
+                {{{preview}}}
+            </div>
+        </header>
+    </article>-->

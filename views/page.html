@@ -1,0 +1,11 @@
+﻿<div class="all-posts">
+    <a href="/posts-list">see all posts</a>
+</div>
+
+<ul class="blog-posts content-items">
+    {{#each posts}}
+    <li>
+        {{> post-preview}}
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,10 @@
+﻿<div class="listview-outlook">
+    {{#each this}}
+    <div class="list marked size3" >
+        <div class="list-content">
+            <span>{{{text}}}</span>
+            <span class="list-subtitle">{{toLongDate created_at}}</span>
+        </div>
+    </div>
+    {{/each}}
+</div>

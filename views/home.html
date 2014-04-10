@@ -1,0 +1,114 @@
+﻿<div class="container">
+    <div class="grid">
+        <div class="row">
+            <div class="span9">
+                <div class="row"><a href="/current-projects"><h2>currently running projects</h2></a></div>
+                <div class="row">
+                    <a href="http://jsreport.net">
+                        <div class="tile double" data-role="live-tile">
+                            <div class="tile-content image">
+                                <img src="/img/jsreport1.png"/>
+                            </div>
+                            <div class="tile-content image">
+                                <img src="/img/jsreport2.png"/>
+                            </div>
+                            <div class="tile-status bg-dark opacity">
+                                <strong class="name">jsreport.net</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://www.mobilefieldreport.com">
+                        <div class="tile double" data-role="live-tile">
+                            <div class="tile-content image">
+                                <img src="/img/mfr1.png"/>
+                            </div>
+                            <div class="tile-content image">
+                                <img src="/img/mfr2.png"/>
+                            </div>
+                            <div class="tile-status bg-dark opacity">
+                                <strong class="name">mobilefieldreport.com</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://postuj.cz">
+                        <div class="tile bg-lightBlue">
+                            <div class="tile-content icon">
+                                <img src="/img/postuj.ico"/>
+                            </div>
+                            <div class="tile-status">
+                                <h4 class="name">postuj.cz</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+               
+                <div class="row">
+                   
+                   
+                </div>
+                <div class="row">
+                    <div class="span6">
+                        <div class="row"><h2 class="span6">blog tags</h2></div>
+                        <div class="row">
+                            <a href="/tag/architecture">
+                                <div class="tile bg-orange">
+                                    <div class="tile-content icon">
+                                        <i class="icon-tag"></i>
+                                    </div>
+                                    <div class="tile-status">
+                                        <h3 class="fg-white name">architecture</h3>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/tag/csharp">
+                                <div class="tile bg-orange">
+                                    <div class="tile-content icon">
+                                        <i class="icon-tag"></i>
+                                    </div>
+                                    <div class="tile-status">
+                                        <h3 class="fg-white name">c#</h3>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/tag/nodejs">
+                                <div class="tile bg-orange">
+                                    <div class="tile-content icon">
+                                        <i class="icon-tag"></i>
+                                    </div>
+                                    <div class="tile-status">
+                                        <h3 class="fg-white name">nodejs</h3>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/tag/jsreport">
+                                <div class="tile bg-orange">
+                                    <div class="tile-content icon">
+                                        <i class="icon-tag"></i>
+                                    </div>
+                                    <div class="tile-status">
+                                        <h3 class="fg-white name">jsreport</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="span3 no-phone">
+                        <div class="row">
+                            <h2>my last tweets
+                                <a href="https://twitter.com/jan_blaha" class="twitter-follow-button" data-dnt="true" data-show-count="false" >Follow @jan_blaha</a>
+                                <script> !function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';  if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs'); </script>  
+                            </h2>
+                        </div>
+                        <div>{{> last-tweets lastTweets}}</div>
+                    </div>
+                </div>
+            </div>
+                <div class="span3" style="float: right">
+                <a href="/blog"><h2>last blog posts </h2></a>
+                {{> last-posts lastPosts}}
+            </div>
+        </div>
+    </div>
+</div>

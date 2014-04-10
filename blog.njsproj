@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>blog</Name>
+    <RootNamespace>blog</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>46845a1a-1d4d-432a-9292-843d581eda74</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="posts.js" />
+    <Compile Include="public\js\jquery-2.1.0.min.js" />
+    <Compile Include="public\js\jquery.widget.min.js" />
+    <Compile Include="public\js\metro.min.js" />
+    <Compile Include="_posts\builder-great-pattern-for-unit-tests.md" />
+    <Content Include="package.json" />
+    <Content Include="public\css\custom.css" />
+    <Content Include="public\css\github.css" />
+    <Content Include="public\css\iconFont.min.css" />
+    <Content Include="public\css\metro-bootstrap-responsive.min.css" />
+    <Content Include="public\css\metro-bootstrap.min.css" />
+    <Content Include="public\fonts\iconFont.dev.svg" />
+    <Content Include="public\fonts\iconFont.eot" />
+    <Content Include="public\fonts\iconFont.json" />
+    <Content Include="public\fonts\iconFont.svg" />
+    <Content Include="public\fonts\iconFont.ttf" />
+    <Content Include="public\fonts\iconFont.woff" />
+    <Content Include="public\fonts\metroSysIcons.svg" />
+    <Content Include="public\fonts\metroSysIcons.ttf" />
+    <Content Include="public\fonts\metroSysIcons.woff" />
+    <Content Include="public\img\b1.JPG" />
+    <Content Include="public\img\blogicon.png" />
+    <Content Include="public\img\jsreport.png" />
+    <Content Include="public\img\mfr screen.png" />
+    <Content Include="public\img\postuj screen.png" />
+    <Content Include="README.md" />
+    <Content Include="views\404.html" />
+    <Content Include="views\about-me.html" />
+    <Content Include="views\current-projects.html" />
+    <Content Include="views\home.html" />
+    <Content Include="views\layouts\main.html" />
+    <Content Include="views\page.html" />
+    <Content Include="views\partials\last-posts.html" />
+    <Content Include="views\partials\last-tweets.html" />
+    <Content Include="views\partials\post-preview.html" />
+    <Content Include="views\post.html" />
+    <Content Include="views\posts-list.html" />
+    <Content Include="views\sitemap.html" />
+    <Content Include="views\tag.html" />
+    <Content Include="_posts\do-not-overuse-mocks.md" />
+    <Content Include="_posts\net-disposable-pattern-and-using-statment-rocks.md" />
+    <Content Include="_posts\prepare-unit-tests-hierarchy.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\fonts\" />
+    <Folder Include="public\img\" />
+    <Folder Include="public\js\" />
+    <Folder Include="views\layouts\" />
+    <Folder Include="views\partials\" />
+    <Folder Include="_posts\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
