@@ -6,32 +6,32 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
         {{#if description}}<meta name="description" content="{{{description}}}">{{/if}}
-        <title>{{#if title}}{{{title}}}{{else}}Jan Blaha - blog about software development{{/if}}</title>  
-        <link rel="stylesheet" href="/css/metro-bootstrap.min.css">
-        <link rel="stylesheet" href="/css/metro-bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="/css/iconFont.min.css">
-        <link rel="stylesheet" href="/css/custom.css">
-        <script src="/js/jquery-2.1.0.min.js"> </script>
-        <script src="/js/jquery.widget.min.js"> </script>
-        <script src="/js/metro.min.js"> </script>
-        <link href="/img/favicon.png" rel="shortcut icon" type="image/x-icon">
-        {{#if linkDocCss}}
-        <link href="/css/github.css" rel="stylesheet"> 
-        {{/if}}          
+                           <title>{{#if title}}{{{title}}}{{else}}Jan Blaha - blog about software development{{/if}}</title>  
+                           <link rel="stylesheet" href="/css/metro-bootstrap.min.css">
+                           <link rel="stylesheet" href="/css/metro-bootstrap-responsive.min.css">
+                           <link rel="stylesheet" href="/css/iconFont.min.css">
+                           <link rel="stylesheet" href="/css/custom.css">
+                           <script src="/js/jquery-2.1.0.min.js"> </script>
+                           <script src="/js/jquery.widget.min.js"> </script>
+                           <script src="/js/metro.min.js"> </script>
+                           <link href="/img/favicon.png" rel="shortcut icon" type="image/x-icon">
+                           {{#if linkDocCss}}
+                           <link href="/css/github.css" rel="stylesheet"> 
+                           {{/if}}          
     </head> 
     <body class="metro" style="background-color: #f8f4ef">
         <header class="bg-dark" data-load="header.html">
             <div class="navigation-bar dark">
-                      <div class="navigation-bar-content container">
-                          <a href="/" class="element"><span></span> Jan Blaha</a>
-                          <span class="element-divider"></span>
-                          <a class="pull-menu" href="#"></a>
+                <div class="navigation-bar-content container">
+                    <a href="/" class="element"><span></span> Jan Blaha</a>
+                    <span class="element-divider"></span>
+                    <a class="pull-menu" href="#"></a>
 
-                          <a href="/blog" class="element"><span></span>Blog</a>
-                          <a href="/current-projects" class="element"><span></span>Current Projects</a>
-                          <a href="/about-me" class="element"><span></span>About Me</a>
-                      </div>
-                  </div>
+                    <a href="/blog" class="element"><span></span>Blog</a>
+                    <a href="/current-projects" class="element"><span></span>Current Projects</a>
+                    <a href="/about-me" class="element"><span></span>About Me</a>
+                </div>
+            </div>
         </header>
 
         <div class="">
@@ -43,8 +43,20 @@
                     </h2>
                 </div>
             </div>
-
-            {{{fixCoding body}}}
+            
+            <div class="container">
+                <div class="grid">
+                    <div class="row">
+                        <div class="span9">
+                            {{{fixCoding body}}}
+                        </div>
+                        <div class="span3" style="float: right">
+                            <a href="/blog"><h2>last blog posts </h2></a>
+                            {{> last-posts lastPosts}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         
             <div class="bg-dark">
                 <div class="container" style="padding: 10px 0;">
@@ -52,17 +64,18 @@
                     <div class="grid no-margin">
                         <div class="row no-margin">
                             <div class="span3 padding10">
-                                <img src="images/spface.jpg" alt="" class="polaroid">
+                                <img src="img/jan_blaha.jpg" alt="Jan Blaha" class="polaroid">
                             </div>
                             <div class="span6 padding10">
                                 <h3 class="fg-white">About author</h3>
-                                <p class="fg-white">Hi! My name is Jan Blaha Pimenov and i'm author of Metro UI CSS from Kiev, Ukraine.</p>
+                                <p class="fg-white">Hi! My name is Jan Blaha. I'm software developer and startup enthusiastic.
+                                    See my current work.
+                                </p>
                             </div>
                             <div class="span3 padding10">
-                                <a class="button danger " style="width: 100%; margin-bottom: 5px" href="http://bizspark.com">Microsoft BizSpark</a>
-                                <a class="button success " style="width: 100%; margin-bottom: 5px" href="http://jetbrains.com">JetBrains</a>
-                                <a class="button info " style="width: 100%; margin-bottom: 5px" href="https://github.com/olton/Metro-UI-CSS">Github</a>
-                                <a class="button warning " style="width: 100%; margin-bottom: 5px;" href="http://lesscss.org">{ Less }</a>
+                                <a class="button warning " style="width: 100%; margin-bottom: 5px" href="http://jsreport.net">jsreport</a>
+                                <a class="button success " style="width: 100%; margin-bottom: 5px" href="http://mobilefieldreport.com">mobile field report</a>
+                                <a class="button info " style="width: 100%; margin-bottom: 5px" href="http://postuj.cz">postuj.cz</a>
                             </div>
                         </div>
                     </div>

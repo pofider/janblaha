@@ -19,12 +19,12 @@
             blog: true
         });
     });
-    
-     app.get('/sitemap', function(req, res) {
+
+    app.get('/sitemap', function(req, res) {
         var postCount = poet.helpers.getPostCount();
         var posts = poet.helpers.getPosts(0, postCount);
         res.setHeader('Content-Type', 'application/xml');
-        res.render('sitemap', { posts: posts,layout: false });
+        res.render('sitemap', { posts: posts, layout: false });
     });
 
     poet.addTemplate({
@@ -37,13 +37,13 @@
         }
     });
 
-    poet.addRoute('/:post', function(req, res, next) {
+    poet.addRoute('/blog/:post', function(req, res, next) {
         var post = poet.helpers.getPost(req.params.post);
         if (post) {
             res.render('post', {
                 post: post,
                 linkDocCss: true,
-                url: "/" + post.url,
+                url: "/blog/" + post.url,
                 id: req.params.slug,
                 blog: true
             });
@@ -51,7 +51,17 @@
             res.send(404);
         }
     });
-    
+
+    poet.addRoute('/tag/:tag', function(req, res, next) {
+        var tag = req.params.tag,
+            posts = poet.helpers.postsWithTag(tag);
+
+        res.render('tag', {
+            posts: posts,
+            tag: tag
+        });
+    });
+
 
     return poet.init();
 }

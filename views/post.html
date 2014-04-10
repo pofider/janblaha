@@ -1,31 +1,28 @@
-﻿<div class="container">
-    <div class="grid fluid ">
-        <div class="row">
-            <div class="span1"></div>
-            <div class="span10">
-                <div id="documentation" class="documentation" >    
-                    <div style="padding-bottom: 20px">
-                        <h1 class="bg-lightBlue fg-white padding5">{{post.title}}</h1>
-                        <div>
-                            <span class="post-date">{{toLongDate post.date}}</span>
-                
-                            {{#each post.tags}}
-                            <a href="/tag/{{this}}" class="bg-cyan fg-white padding5">{{this}}</a>
-                            {{/each}}
-                        </div>
-                    </div>
+﻿<div class="grid fluid">
+    <div class="row">
+        <div class="span12">
+            <div id="documentation" class="documentation" >    
+                <div style="padding-bottom: 20px">
+                    <h1 class="bg-lightBlue fg-white padding5">{{post.title}}</h1>
                     <div>
-                        {{{post.content}}}
+                        <span class="post-date">{{toLongDate post.date}}</span>
+                
+                        {{#each post.tags}}
+                        <a href="/tag/{{this}}" class="bg-cyan fg-white padding5">{{this}}</a>
+                        {{/each}}
                     </div>
-            
-                    <div id="disqus_thread"></div>
                 </div>
+                <div>
+                    {{{post.content}}}
+                </div>
+            
+                <div id="disqus_thread"></div>
             </div>
-            <div class="span1"></div>
         </div>
+      
     </div>
 </div>
-    
+
 
 <script type="text/javascript">
     var disqus_shortname = 'janblaha';
