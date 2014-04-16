@@ -39,8 +39,7 @@ app.get('/about-me', function(req, res) {
 app.get('/', function(req, res) {
     console.log(JSON.stringify(req.headers));
     res.render('home', {
-        lastTweets: lastTweets,
-        //lastPosts: lastPosts
+	showTweets: true       
     });
 });
 
@@ -84,7 +83,8 @@ loadTweets(function() {
 
         lastPosts = poet.helpers.getPosts(0, 3);
         app.locals({
-            lastPosts: lastPosts
+            lastPosts: lastPosts,
+	        lastTweets: lastTweets
         });
 
         app.listen(process.env.PORT);

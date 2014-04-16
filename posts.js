@@ -20,7 +20,7 @@
         });
     });
 
-    app.get('/sitemap', function(req, res) {
+    app.get('/sitemap*', function(req, res) {
         var postCount = poet.helpers.getPostCount();
         var posts = poet.helpers.getPosts(0, postCount);
         res.setHeader('Content-Type', 'application/xml');
@@ -44,6 +44,7 @@
                 post: post,
                 linkDocCss: true,
                 url: "/blog/" + post.url,
+                fullUrl: "http://jsreport.net/blog/" + post.url,
                 id: req.params.slug,
                 blog: true
             });

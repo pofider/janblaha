@@ -2,3 +2,16 @@
     color:#0067CB; 
     font-weight: bold !important;
 }
+
+.underbanner {
+height: 5px;
+}
+
+.metro .grid .row {
+display: block;
+margin-top: 5px;
+}
+
+.metro .listview-outlook .list.marked .list-content {
+border-left: 0px !important;
+}

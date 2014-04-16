@@ -17,25 +17,23 @@
                 </div>
             
                 <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'janblahablog';
+                    var disqus_developer = 1;
+
+                    var disqus_url = '{{{post.fullUrl}}}';
+                    var disqus_identifier = '{{{post.id}}}';
+
+                    (function() {
+                        var dsq = document.createElement('script');
+                        dsq.type = 'text/javascript';
+                        dsq.async = true;
+                        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
             </div>
         </div>
       
     </div>
 </div>
-
-
-<script type="text/javascript">
-    var disqus_shortname = 'janblaha';
-    var disqus_developer = 1;
-
-    var disqus_url = '{{url}}';
-    var disqus_identifier = '{{id}}';
-
-    (function() {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
