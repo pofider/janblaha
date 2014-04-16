@@ -37,6 +37,7 @@ app.get('/about-me', function(req, res) {
 });
 
 app.get('/', function(req, res) {
+    console.log(JSON.stringify(req.headers));
     res.render('home', {
         lastTweets: lastTweets,
         //lastPosts: lastPosts
