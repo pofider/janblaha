@@ -70,6 +70,7 @@
     <Content Include="views\sitemap.html" />
     <Content Include="views\tag.html" />
     <Content Include="web.config" />
+    <Content Include="_posts\azure-blob-storage-file-system-abstraction-for-on-premise.md" />
     <Content Include="_posts\do-not-overuse-mocks.md" />
     <Content Include="_posts\net-disposable-pattern-and-using-statment-rocks.md" />
     <Content Include="_posts\prepare-unit-tests-hierarchy.md" />

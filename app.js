@@ -39,7 +39,7 @@ app.get('/about-me', function(req, res) {
 app.get('/', function(req, res) {
     console.log(JSON.stringify(req.headers));
     res.render('home', {
-	showTweets: true       
+        showTweets: true
     });
 });
 
@@ -74,19 +74,27 @@ function loadTweets(cb) {
     });
 }
 
+function refresh(cb) {
+    loadTweets(function() {
+        require("./posts.js")(app).then(function(poet) {
+            app.get('*', function(req, res) {
+                res.status(404).render("404");
+            });
 
-loadTweets(function() {
-    require("./posts.js")(app).then(function(poet) {
-        app.get('*', function(req, res) {
-            res.status(404).render("404");
+            lastPosts = poet.helpers.getPosts(0, 3);
+            app.locals({
+                lastPosts: lastPosts,
+                lastTweets: lastTweets
+            });
+
+            cb();
         });
-
-        lastPosts = poet.helpers.getPosts(0, 3);
-        app.locals({
-            lastPosts: lastPosts,
-	        lastTweets: lastTweets
-        });
-
-        app.listen(process.env.PORT);
     });
+}
+
+
+refresh(function() {
+    app.listen(process.env.PORT);
 });
+
+setTimeout(function() { setInterval(refresh, 1800000); }, 1800000);
