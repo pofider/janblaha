@@ -1,6 +1,7 @@
 var express = require('express'),
     exphbs = require('express3-handlebars'),
-    app = express();
+    app = express(),
+    posts = require("./posts.js");
 
 var hbs = exphbs.create({
     defaultLayout: 'main',
@@ -46,6 +47,7 @@ app.get('/', function(req, res) {
 
 var lastTweets;
 var lastPosts;
+var poet;
 
 
 function loadTweets(cb) {
@@ -76,11 +78,7 @@ function loadTweets(cb) {
 
 function refresh(cb) {
     loadTweets(function() {
-        require("./posts.js")(app).then(function(poet) {
-            app.get('*', function(req, res) {
-                res.status(404).render("404");
-            });
-
+        poet.init().then(function(poet) {
             lastPosts = poet.helpers.getPosts(0, 3);
             app.locals({
                 lastPosts: lastPosts,
@@ -92,8 +90,12 @@ function refresh(cb) {
     });
 }
 
+poet = posts(app);
 
 refresh(function() {
+    app.get('*', function(req, res) {
+                res.status(404).render("404");
+    });
     app.listen(process.env.PORT);
 });
 

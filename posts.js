@@ -56,13 +56,14 @@
     poet.addRoute('/tag/:tag', function(req, res, next) {
         var tag = req.params.tag,
             posts = poet.helpers.postsWithTag(tag);
-
+      
         res.render('tag', {
             posts: posts,
             tag: tag
         });
     });
 
-
-    return poet.init();
+    return poet;
 }
+    
+   

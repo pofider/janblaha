@@ -1,7 +1,7 @@
 ﻿{{{
     "title"    : "Builder: great pattern for unit tests",  
     "date"     : "12-03-2013 20:56",
-	"tags"	   :[ "architecture", "testing", ".NET" ]
+	"tags"	   :[ "architecture", "testing", ".Net" ]
 }}}
 
 In the last post it was explained how to prepare unit test hierarchy for writing tests interacting with database. In this post I will concentrate 
