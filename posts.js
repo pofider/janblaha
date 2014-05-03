@@ -46,7 +46,8 @@
                 url: "/blog/" + post.url,
                 fullUrl: "http://jsreport.net/blog/" + post.url,
                 id: req.params.slug,
-                blog: true
+                blog: true,
+                title: post.title
             });
         } else {
             res.send(404);
