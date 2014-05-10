@@ -75,6 +75,7 @@
     <Content Include="_posts\do-not-overuse-mocks.md" />
     <Content Include="_posts\net-disposable-pattern-and-using-statment-rocks.md" />
     <Content Include="_posts\prepare-unit-tests-hierarchy.md" />
+    <Content Include="_posts\run-action-after-transaction-commit-using-nhibernate.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
