@@ -1,6 +1,7 @@
 ﻿{{{
     "title"    : "Pdf reporting in visual studio, c# and asp.net mvc",  
     "date"     : "08-21-2014 15:19",
+	"slug"     : "pdf-reporting-in-visual-studio-csharp-and-asp-net-mvc",  
 	"tags"	   :[ ".NET", "jsreport" ],
 	"preview"  : "With recent jsreport announcements of visual studio reporting extension and .net embedded reporting it should be pretty easy to generate pdf reports from any c# application. I decided to take a shot and extend official asp.net MVC 5 Contoso University example with reporting capabilities using jsreport."
 }}}
