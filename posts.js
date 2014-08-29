@@ -3,6 +3,8 @@
         postsPerPage: 300,
     });
 
+    var cache = {};
+
     var marked = require("marked");
 
     marked.setOptions({
@@ -40,7 +42,12 @@
     poet.addRoute('/blog/:post', function(req, res, next) {
         var post = poet.helpers.getPost(req.params.post);
         if (post) {
-            res.render('post', {
+            
+            if (cache[req.params.post]) {
+                return res.render('post', cache[req.params.post]);
+            }
+
+	    cache[req.params.post] = {
                 post: post,
                 linkDocCss: true,
                 url: "/blog/" + post.url,
@@ -48,7 +55,9 @@
                 id: req.params.slug,
                 blog: true,
                 title: post.title
-            });
+            };
+
+            res.render('post', cache[req.params.post]);
         } else {
             res.send(404);
         }
