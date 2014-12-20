@@ -28,7 +28,7 @@ jsreport service [pricing](http://jsreport.net/online/pricing) was built based o
 ##Conclusion
 jsreport finally brings pdf reports rendering as a service for reasonable price. Get rid of your old reporting software and use innovative and  modern reporting solution. 
 
-Register and start for free: http://jsreport.net/online
+Register, start for free and use [pdf reports as a service](http://jsreport.net/online).
 
 
 

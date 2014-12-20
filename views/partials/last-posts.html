@@ -1,10 +1,13 @@
 ﻿{{#each this}}
 <div class="panel">
-    <div class="panel-header bg-lightBlue fg-white text-center">
-        <a href="{{url}}" class="fg-white">{{title}}</a>
+    <div class="panel-header text-left">
+        <a href="{{url}}" class="fg-lightBlue">{{title}}</a>
     </div>
     <div class="padding5">
-        <span class="post-date">{{toLongDate date}}</span>
+        <span class="fg-lightBlue">{{toLongDate date}}</span>
+        {{#each tags}}
+            <a href="/tag/{{this}}" class="bg-grayLight fg-white padding2">{{this}}</a>
+        {{/each}}
     </div>
     <div class="panel-content">
         {{{preview}}}

@@ -3,24 +3,13 @@
         <div class="span12">
             <div id="documentation" class="documentation" >    
                 <div style="padding-bottom: 20px">
-                    <h1 class="bg-lightBlue fg-white padding5">{{post.title}}</h1>
+                    <h1>{{post.title}}</h1>
                     <div>
                         <span class="post-date">{{toLongDate post.date}}</span>
                 
                         {{#each post.tags}}
-                        <a href="/tag/{{this}}" class="bg-cyan fg-white padding5">{{this}}</a>
+                        <a href="/tag/{{this}}" class="bg-grayLight fg-white padding2">{{this}}</a>
                         {{/each}}
-                        <span  id="jsr-root" data-iframe="false" data-format="A4" data-orientation="portrait" data-color="cornflowerblue" ></span>
-                        <script>
-                            (function (d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id)) return;
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = "//pagetopdf.com/js/widget.js";
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }(document, 'script', 'jsr-pagetopdf'));
-                        </script>
                     </div>
                 </div>
                 <div>

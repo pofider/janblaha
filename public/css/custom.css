@@ -1,17 +1,41 @@
 ﻿.post-date {
-    color:#0067CB; 
-    font-weight: bold !important;
+    color:#0067CB;
 }
 
 .underbanner {
-height: 5px;
+    height: 5px;
 }
 
 .metro .grid .row {
-display: block;
-margin-top: 5px;
+    display: block;
+    margin-top: 5px;
 }
 
 .metro .listview-outlook .list.marked .list-content {
-border-left: 0px !important;
+    border-left: 0px !important;
+}
+
+
+.metro .panel .panel-header {
+    color: #1d1d1d;
+    cursor: default;
+    font-family: "Segoe UI Light_","Open Sans Light",Verdana,Arial,Helvetica,sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 2.2rem;
+}
+
+.padding2 {
+    padding: 2px;
+}
+
+.metro h2 {
+    color: #004e9d;
+    margin-bottom: 20px;
+    /*font-family: "Segoe UI Light_","Open Sans Light",Verdana,Arial,Helvetica,sans-serif;*/
+    /*font-size: 2.5rem;*/
+    /*font-weight: 300;*/
+    /*letter-spacing: 0.01em;*/
+    /*line-height: 2.5rem;*/
 }

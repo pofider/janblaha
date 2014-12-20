@@ -1,7 +1,7 @@
 ﻿{{{
     "title"  : "Converting html to pdf in node.js",  
     "date" :  "09-02-2014 21:49",
-    "tags" : [ "jsreport" ],
+    "tags" : [ "jsreport", "node.js" ],
     "slug" : "converting-html-to-pdf-in-nodejs"
 }}}
 

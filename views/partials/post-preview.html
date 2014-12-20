@@ -1,14 +1,13 @@
 ﻿<div class="row">
     <div class="span12">
         <div class="panel">
-            <div class="panel-header bg-lightBlue fg-white">
-                <a href="{{url}}" class="fg-white">{{title}}</a>
+            <div class="panel-header text-left">
+                <a href="{{url}}" class="fg-lightBlue">{{title}}</a>
             </div>
-            <div class="padding10">
-                <span class="post-date">{{toLongDate date}}</span>
-                
+            <div class="padding5">
+                <span class="fg-lightBlue">{{toLongDate date}}</span>
                 {{#each tags}}
-                    <a href="/tag/{{this}}" class="bg-cyan fg-white padding5">{{this}}</a>
+                <a href="/tag/{{this}}" class="bg-grayLight fg-white padding2">{{this}}</a>
                 {{/each}}
             </div>
             <div class="panel-content">

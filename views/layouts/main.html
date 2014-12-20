@@ -7,18 +7,18 @@
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
         {{#if description}}<meta name="description" content="{{{description}}}">{{/if}}
                            <title>{{#if title}}{{{title}}}{{else}}Jan Blaha - blog about software development{{/if}}</title>
-                           <link rel="stylesheet" href="/css/blog.min.css?v=1">
+                           <link rel="stylesheet" href="/css/blog.min.css?v=2">
                            <script src="/js/blog.min.js?v=1"></script>
                            <link href="/img/favicon.png" rel="shortcut icon" type="image/x-icon">
                            {{#if linkDocCss}}
-                           <link href="/css/github.css?v=2" rel="stylesheet">
+                           <link href="/css/github.css?v=3" rel="stylesheet">
                            {{/if}}          
     </head>
     <body class="metro" style="background-color: #f8f4ef">
         <header class="bg-dark" data-load="header.html">
             <div class="navigation-bar dark">
                 <div class="navigation-bar-content container">
-                    <a href="/" class="element"><span class="icon-grid-view on-left"></span>janblaha.net</a>
+                    <a href="/" class="element"><img src="/img/favicon.png" width="25px" height="25px" class="on-left"></span>janblaha.net</a>
                     <a class="pull-menu" href="#"></a>
                     <a href="/about-me" class="element place-right"><span></span>About Me</a>
                     <a href="/current-projects" class="element place-right"><span></span>Current Projects</a>
@@ -27,18 +27,34 @@
             </div>
         </header>
 
-        <div class="">
-            <div style="background: url(/img/b1.jpg) top center no-repeat; background-size: cover; height: 250px;">
-                <div class="container" style="padding: 110px 10px">
-                    <h1>Jan Blaha</h1>
-                    <h2>Software developer & consultant
-                    </h2>
+        <div>
+            <div class="padding5 bg-cyan ">
+                <div class="container fg-white">
+                    <div class="grid fluid">
+                        <div class="row">
+                            <h1 class="fg-white text-center">Jan Blaha</h1>
+                        </div>
+                        <div class="row">
+                            <div class="text-center span8 offset2">
+                                <p class="fg-white">
+                                   Blog about software development
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white underbanner">
-                <div class="container">
-                </div>
-            </div>
+            <!--<div style="height: 70px;" class="bg-blue fg-white">-->
+                <!--<div class="container">-->
+                    <!--<h1>Jan Blaha</h1>-->
+                    <!--<h2>Software developer & consultant-->
+                    <!--</h2>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="bg-white underbanner">-->
+                <!--<div class="container">-->
+                <!--</div>-->
+            <!--</div>-->
 
             <div class="container">
                 <div class="grid">
@@ -95,6 +111,17 @@
                             <a class="button success " style="width: 100%; margin-bottom: 5px" href="http://mobilefieldreport.com">mobile field report</a>
                             <a class="button info " style="width: 100%; margin-bottom: 5px" href="http://postuj.cz">postuj.cz</a>
                         </div>
+                        <a  style="display:none" class="element place-right" id="jsr-root" data-iframe="false" data-format="A4" data-orientation="portrait" data-color="black" ></a>
+                        <script>
+                            (function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//pagetopdf.com/js/widget.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'jsr-pagetopdf'));
+                        </script>
                     </div>
                 </div>
             </div>
