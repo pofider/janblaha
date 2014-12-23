@@ -1,7 +1,8 @@
-m{{{
+{{{
     "title"    : "Excel reports in c# and asp.net",
     "date"     : "12-20-2014 19:09",
-    "tags"	   : [ "jsreport" ]
+    "tags"     : [ "jsreport" ],
+    "slug"     : "excel-reports-in-csharp-and-aspnet"
 }}}
 
 Quite some time ago I blogged about rendering [pdf reports in c#](http://jsreport.net/blog/pdf-reports-in-csharp). Recently we have added excel reports into [jsreport](http://jsreport.net) and it was released with a little delay  also into .NET. This means you should be able to use both [html-to-xlsx](http://jsreport.net/learn/html-to-xlsx) and [xlsx](http://jsreport.net/learn/xlsx) recipes to create excel files from your .NET environments now.
