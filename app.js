@@ -96,7 +96,7 @@ refresh(function() {
     app.get('*', function(req, res) {
                 res.status(404).render("404");
     });
-    app.listen(process.env.PORT);
+    app.listen(process.env.PORT || 1000);
 });
 
 setTimeout(function() { setInterval(refresh, 1800000); }, 1800000);

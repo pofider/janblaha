@@ -10,7 +10,7 @@
     marked.setOptions({
         highlight: function(code, lang, callback) {
             require('pygmentize-bundled')({ lang: lang, format: 'html', options: { nowrap: true } }, code, function(err, result) {
-                callback(err, result.toString());
+                callback(err, result ? result.toString() : null);
             });
         }
     });
