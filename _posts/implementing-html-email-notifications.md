@@ -1,6 +1,8 @@
 ﻿{{{
     "title"    : "Implementing html email notifications",	
-    "date"     : "04-10-2015 14:09"
+    "date"     : "04-10-2015 14:09",
+    "tags"	   : [ "jsreport" ]
+
 }}}
 
 The best practice when adding email notifications feature to your system is to separate as much as you can from email body assembling to email sending outside of the core system. The emails templates quite likely often changes and you don't want to deploy the system because of every single notification change. The best is to just separate everything into an external system and give the access to your PR or Marketing department so they change emails as the time goes without affecting the core system.

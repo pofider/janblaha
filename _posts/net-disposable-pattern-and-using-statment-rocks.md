@@ -1,7 +1,7 @@
 ﻿{{{
     "title"    : ".NET disposable pattern and [using] statment rocks",  
     "date"     : "02-17-2013 14:56",
-	"tags"	   :[ ".Net" ]
+	"tags"	   :[ ".NET" ]
 }}}
 
 I remember the first time I saw the using statement in c#. It was actually used when reading file content.
