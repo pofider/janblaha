@@ -3,6 +3,7 @@ var express = require('express'),
     app = express(),
     posts = require("./posts.js");
 
+
 var hbs = exphbs.create({
     defaultLayout: 'main',
     extname: ".html",
