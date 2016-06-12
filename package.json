@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "0.0.1-next.0",
+  "version": "0.0.2-next.0",
   "description": "blog",
   "main": "app.js",
   "dependencies": {
