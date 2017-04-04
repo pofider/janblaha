@@ -1,8 +1,10 @@
 var express = require('express'),
     exphbs = require('express3-handlebars'),
     app = express(),
-    posts = require("./posts.js");
+    posts = require("./posts.js"),
+    fs = require('fs')
 
+var twitterKeys = JSON.parse(fs.readFileSync('./twitter.keys.json', 'utf8'))    
 
 var hbs = exphbs.create({
     defaultLayout: 'main',
@@ -38,8 +40,7 @@ app.get('/about-me', function(req, res) {
     });
 });
 
-app.get('/', function(req, res) {
-    console.log(JSON.stringify(req.headers));
+app.get('/', function(req, res) {    
     res.render('home', {
         showTweets: true
     });
@@ -57,12 +58,12 @@ function loadTweets(cb) {
         return new Date(Date.parse(text.replace(/( +)/, ' UTC$1')));
     }
 
-    var twitter = require('twitter');
+    var twitter = require('twitter');    
     var twit = new twitter({
-        consumer_key: 'CkZxWsyDCWM86o8BdChKNX3tX',
-        consumer_secret: 'wELjC4tvLOvB4eFJL88v7ElN0TWZn7VbYghIXFDdHBpFccHbpg',
-        access_token_key: '163233584-OWn9WRmuuryC9SBfE3kfpSUEazATd7Di69pyxOGC',
-        access_token_secret: 'IjxS8KeWufGm4G4QSFHnNXkU18LmBaXRCf4IwjGsag1SR'
+        consumer_key: twitterKeys['consumer_key'],
+        consumer_secret: twitterKeys['consumer_secret'],
+        access_token_key: twitterKeys['access_token_key'],
+        access_token_secret: twitterKeys['access_token_secret']
     });
 
     var twitterHelper = require('twitter-text');
@@ -78,8 +79,8 @@ function loadTweets(cb) {
 }
 
 function refresh(cb) {
-    loadTweets(function() {
-        poet.init().then(function(poet) {
+    loadTweets(function() {        
+        poet.init().then(function(poet) {            
             lastPosts = poet.helpers.getPosts(0, 3);
             app.locals({
                 lastPosts: lastPosts,
@@ -97,7 +98,7 @@ refresh(function() {
     app.get('*', function(req, res) {
                 res.status(404).render("404");
     });
-    app.listen(process.env.PORT || 1000);
+    app.listen(process.env.PORT || 1000);    
 });
 
 setTimeout(function() { setInterval(refresh, 1800000); }, 1800000);

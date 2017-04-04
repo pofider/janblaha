@@ -4,15 +4,15 @@
   "description": "blog",
   "main": "app.js",
   "dependencies": {
-    "express": "^3.5.1",
-    "poet": "*",
-    "express3-handlebars": "^0.5.0",
-    "pygmentize-bundled": "^2.1.0",
-    "marked": "^0.3.2",
-    "moment": "^2.5.1",
-    "node-twitter": "^0.5.0",
-    "twitter": "^0.2.9",
-    "twitter-text": "^1.9.0"
+    "express": "3.5.1",
+    "poet": "1.0.0-rc4",
+    "express3-handlebars": "0.5.0",
+    "pygmentize-bundled": "2.1.0",
+    "marked": "0.3.2",
+    "moment": "2.5.1",
+    "node-twitter": "0.5.0",
+    "twitter": "0.2.9",
+    "twitter-text": "1.9.0"
   },
   "devDependencies": {}
 }
