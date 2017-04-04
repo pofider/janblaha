@@ -13,7 +13,7 @@ NHibernate has very powerful syntax for doing sql queries. It's `QueryOver` synt
 Luckily NHibernate power lays in various extension points it provides. One of them is the hook for transforming entity tree just after parsing them from db result set. This hook can be added using `TransformUsing` method. This method accepts `IResultTransformer` interface which is offering hooks to entity transformation process. So we will do the hard job for nhibernate and crawl entity tree and remove all duplications. We need avoid stepping into properties that are no fetched yet. It is also important to clear nhibernate dirty flag on collections otherwise it will try to sync it back with the db.
 
 Here is final code we use:
-```c#
+```csharp
 public class DistinctIdTransformer : IResultTransformer
 {
     public object TransformTuple(object[] tuple, string[] aliases)
@@ -110,6 +110,6 @@ public class DistinctIdTransformer : IResultTransformer
 ```
 
 Now you can add DistinctIdTransformer to `QueryOver` and hopefully you will not get duplications anymore.
-```c#
+```csharp
  Session.QueryOver<Contact>(() => alias).TransformUsing(new DistinctIdTransformer());
 ```

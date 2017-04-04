@@ -16,14 +16,14 @@ So first install jsreport.Embedded nuget
 `Install-Package jsreport.Embedded`
 
 Then start embedded reporting server. This will start node process running jsreport and bind it's life cycle with your application.
-```c#
+```csharp
 var server = new EmbeddedReportingServer();
 await server.StartAsync();
 ```
 
 Now you are ready for rendering excel files. The easiest is to use [html-to-xlsx](http://jsreport.net/learn/html-to-xlsx) recipe which will convert input html table into xlsx file. Rendering is invoked using [jsreport c# client](http://jsreport.net/learn/net-client) as follows:
 
-```c#
+```csharp
 var report = await server.ReportingService.RenderAsync(new RenderRequest()
                 {
                     template = new Template()
@@ -39,7 +39,7 @@ The `report.Content` now contains stream to xslx file. Pretty simple right? Ther
 ##Html rendering
 You probably won't assemble html using a StringBuilder. Better is to use  [javascript templating engines](http://jsreport.net/learn/templating-engines) jsreport evaluates. Extending previous `RenderRequest` with some input data and dynamic html rendering using [jsrender](http://jsreport.net/learn/jsrender) looks following:
 
-```c#
+```csharp
 new RenderRequest() {
 	template = new Template() {
 		content =
@@ -51,9 +51,9 @@ new RenderRequest() {
 		recipe = "html-to-xlsx",
 		engine = "jsrender"
 	},
-        data = new  {
-	        people = new [] { "Jan Blaha", "John Lennon"}
-        }
+    data = new  {
+	    people = new [] { "Jan Blaha", "John Lennon"}
+    }
 }
 ```
 
@@ -74,14 +74,14 @@ First install `jsreport.MVC` package:
 `Install-Package jsreport.MVC`
 
 Then register `JsReportFilterAttribute` asp.net mvc filter
-```c#
+```csharp
 //using embedded server created previously
 filters.Add(new JsReportFilterAttribute(server.ReportingService));
 ```
 
 Now you can tag any controller action with `EnableJsReport` and specify how shall be the output transformed. For example to transform html into excel you can use:
 
-```c#
+```csharp
 [EnableJsReport(Recipe = "html-to-xlsx")]
 public ActionResult Xlsx()
 {

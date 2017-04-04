@@ -1,18 +1,26 @@
-﻿module.exports = function(app) {
-    var poet = require('poet')(app, {
+﻿var fs = require("fs"),
+    path = require("path"),
+    Poet = require('poet')
+    marked = require("marked"),
+    Prism = require('prismjs'),
+    languages = require('prism-languages'),
+    cache = {};
+
+function highlight(code, lang, callback) {    
+    try {
+        return callback(null, Prism.highlight(code, languages[lang]));
+    } catch (err) {
+        callback(err)    
+    }
+}
+
+module.exports = function(app) {
+    var poet = Poet(app, {
         postsPerPage: 300,
     });
 
-    var cache = {};
-
-    var marked = require("marked");
-
     marked.setOptions({
-        highlight: function(code, lang, callback) {
-            require('pygmentize-bundled')({ lang: lang, format: 'html', options: { nowrap: true } }, code, function(err, result) {
-                callback(err, result ? result.toString() : null);
-            });
-        }
+        highlight: highlight
     });
 
     app.get("/blog", function(req, res) {

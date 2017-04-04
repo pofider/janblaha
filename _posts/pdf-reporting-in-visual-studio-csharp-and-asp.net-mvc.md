@@ -33,7 +33,7 @@ You can try to click `Preview` button or hit `F5` to see if everything works. It
 
 Now let's prepare input data `Departments` report will be generated from. `Contoso University` uses entity framework as data access layer and we will employ it for this. Navigate to `SchoolContext.cs` and add following method and constructors inside.
 
-```c#
+```csharp
 public SchoolContext(string nameOrConnectionString) : base(nameOrConnectionString)
 {
 }
@@ -60,7 +60,7 @@ public object QueryDepartmentsForReport()
 
 This will load list of departments from local db into anonymous object we will use in the report. Now we need to tell report to use this method as sample data input. Create `ReportingStartup.cs` class in the project and add following content there.
 
-```c#
+```csharp
 public class ReportingStartup
     {
         public void Configure(IVSReportingConfiguration configuration)
@@ -219,7 +219,7 @@ Now the sample report is ready and we want to provide Constoso University applic
 
 To do it we need to start embedded reporting server at asp.net application start. To do it navigate to `Global.asax.cs` and add following.
 
-```c#
+```csharp
 public static IEmbeddedReportingServer EmbeddedReportingServer { get; private set; }
 
  protected void Application_Start() {
@@ -232,7 +232,7 @@ public static IEmbeddedReportingServer EmbeddedReportingServer { get; private se
 
 This will extract and run jsreport from `App_Data` folder and also synchronizes all the local `*.jsrep` files with the server on the startup. Last thing we need to do is to extend `DepartmentController.cs` with action rendering report. 
 
-```c#
+```csharp
 [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
 public async Task<ActionResult> Report()
 {

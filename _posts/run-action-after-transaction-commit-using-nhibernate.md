@@ -12,7 +12,7 @@ One of the session/transaction handling technique in NHibernate is called `sessi
 You can use http context to store an information what you want to do at the end of the request but this is just ugly and better is to use what NHibernate offers. NHibernate `Transaction` class exposes method `RegisterSynchronization`. This method can be used to register for transaction events and accepts implementation of `ISynchronization` interface. You only need to implement methods `BeforeCompletion` and `AfterCompletion` and you are done.
 
 Basic implementation of `ISynchronization` invoking custom action after transaction commit can look following:
-```c#
+```csharp
 public class TransactionSynchronization : ISynchronization
 {
     private readonly Action _action;
@@ -36,7 +36,7 @@ public class TransactionSynchronization : ISynchronization
 ```
 When you have `TransactionSynchronization` you can just call `RegisterSynchronization` and register any custom action you want.
 
-```c#
+```csharp
 Session.Transaction.RegisterSynchronization(new ThreadSynchronization(() => {
     var client = new HttpClient()
     ...

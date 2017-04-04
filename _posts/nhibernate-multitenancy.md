@@ -46,7 +46,7 @@ Although calling `Session.Load` still uses only an uncluttered index on `Id` the
 
 The problem we encountered with such a hybrid primary key was in the database row locks...
 
-```c#
+```csharp
 //select ... from invoice with row lock
 Session1.Load<Invoice>(132, LockMode.Upgrade); 
 
