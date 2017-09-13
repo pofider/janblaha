@@ -6,7 +6,10 @@
 	"preview"  : "With recent jsreport announcements of visual studio reporting extension and .net embedded reporting it should be pretty easy to generate pdf reports from any c# application. I decided to take a shot and extend official asp.net MVC 5 Contoso University example with reporting capabilities using jsreport."
 }}}
 
-> Final example source code can be downloaded from **[github](https://github.com/jsreport/net/tree/master/examples/ContosoUniversity)**
+> **UPDATE:** There is new [.NET jsreport sdk](https://jsreport.net/learn/dotnet)  available with breaking changes which makes this tutorial outdated. Please follow the videos and example in the [sdk documentation](https://jsreport.net/learn/dotnet) to get the up to date information.
+
+<br/>    
+
 
 With recent jsreport announcements of [visual studio reporting extension](http://jsreport.net/learn/visual-studio-extension) and [.net embedded reporting](http://jsreport.net/learn/net-embedded) it should be pretty easy to generate pdf reports from any c# application. I decided to take a shot and extend [official asp.net MVC 5 Contoso University](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) example with reporting capabilities using jsreport. It turned out it's really super simple and it took me only an hour. I will describe some steps you need to do in order to get reporting working and give you a [link to github](https://github.com/jsreport/net/tree/master/examples/ContosoUniversity) where you can download final c# source.
 
