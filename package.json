@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "blog",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-concat": "^0.3.0",
@@ -10,15 +13,17 @@
     "grunt-contrib-uglify": "^0.5.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
     "express": "3.5.1",
-    "poet": "1.0.0-rc4",
-    "prism-languages": "0.3.3",
-    "prismjs": "1.6.0",
     "express3-handlebars": "0.5.0",
-    "pygmentize-bundled": "2.1.0",
     "marked": "0.3.2",
     "moment": "2.5.1",
     "node-twitter": "0.5.0",
+    "poet": "1.0.0-rc4",
+    "prism-languages": "0.3.3",
+    "prismjs": "1.6.0",
+    "pygmentize-bundled": "2.1.0",
     "twitter": "0.2.9",
     "twitter-text": "1.9.0"
   }

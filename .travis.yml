@@ -1,0 +1,15 @@
+sudo: required
+language: node_js
+node_js:
+- '8'
+services:
+- docker
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
+env:
+  global:
+  - secure: Rdc4V6YcgZAztqtElTYsv883Yffgci5GgG3JxtnsF96STbzdOGij2YfGGtApgq6EOmiADCpf0iENaFlAgSPWU0rZqRmwSrXm8uzuoHneIZ2p7nFt6EvUmY9qKDUUnKRMZDwYD9YcTy+JXjGsEfurgBA0ynyx6TL0DeAMRogCpX8=
+  - secure: DheVVfKSox3MtRUt4CxATqp6MIcbci4+KHeRJkF/ZbcO9T5usnqtHZsFmKzF9Bv2hEMakoS2n0lKjXbOmHDwdg6rPcyYeSoldO+I4hSepIfS2gFE8pKvPNbjzHUlYYbVO1CgeMfjwyDKqnmcV6v3r4sufXQDl8yc576PkjNE1mk=

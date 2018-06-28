@@ -2,9 +2,14 @@ var express = require('express'),
     exphbs = require('express3-handlebars'),
     app = express(),
     posts = require("./posts.js"),
-    fs = require('fs')
+    fs = require('fs');
 
-var twitterKeys = JSON.parse(fs.readFileSync('./twitter.keys.json', 'utf8'))    
+var twitterKeys
+try {
+    twitterKeys = JSON.parse(fs.readFileSync('./twitter.keys.json', 'utf8'))    
+} catch (e) {
+    console.error(e)
+}
 
 var hbs = exphbs.create({
     defaultLayout: 'main',
@@ -53,6 +58,9 @@ var poet;
 
 
 function loadTweets(cb) {
+    if (!twitterKeys) {
+        return cb()
+    }
 
     function parseTwitterDate(text) {
         return new Date(Date.parse(text.replace(/( +)/, ' UTC$1')));
