@@ -12,8 +12,8 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update && sudo apt-get install -y azure-cli
 
 az login --service-principal --username $AZ_APP_ID --password $AZ_PASSWORD --tenant $AZ_TENANT
-az aks install-cli
-az aks get-credentials --resource-group test --name test
+sudo az aks install-cli
+sudo az aks get-credentials --resource-group test --name test
 
 sed -i 's/tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-deployment.yaml
 kubectl apply -f ./kubernetes/janblaha-deployment.yaml
