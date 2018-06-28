@@ -9,7 +9,7 @@ deploy:
   skip_cleanup: true
   script: bash docker_push.sh
   on:
-    branch: master
+    tags: true
 env:
   global:
   - secure: Rdc4V6YcgZAztqtElTYsv883Yffgci5GgG3JxtnsF96STbzdOGij2YfGGtApgq6EOmiADCpf0iENaFlAgSPWU0rZqRmwSrXm8uzuoHneIZ2p7nFt6EvUmY9qKDUUnKRMZDwYD9YcTy+JXjGsEfurgBA0ynyx6TL0DeAMRogCpX8=
