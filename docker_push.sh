@@ -16,4 +16,4 @@ sudo az aks install-cli
 sudo az aks get-credentials --resource-group test --name test
 
 sed -i 's/tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-deployment.yaml
-kubectl apply -f ./kubernetes/janblaha-deployment.yaml
+sudo kubectl apply -f ./kubernetes/janblaha-deployment.yaml
