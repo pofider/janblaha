@@ -4,6 +4,12 @@ docker build -t janblaha .
 docker tag janblaha pofider/janblaha:$TRAVIS_TAG
 docker push pofider/janblaha
 
+sudo mkdir ~/config
+echo "github.com:" >> ~/config/hub
+echo "- protocol:https" >> ~/config/hub
+echo "  user: pofider" >> ~/config/hub
+echo "  oauth_token: ${GITHUB_TOKEN}" >> ~/config/hub
+
 sudo add-apt-repository -y ppa:cpick/hub
 sudo apt-get update
 sudo apt-get install -y hub
@@ -27,5 +33,4 @@ echo "push new branch"
 hub push -u origin update-deployment-${TRAVIS_TAG}
 
 echo "creating pull request"
-git config user.name
 printf 'pofider\n' | hub pull-request -m "Update the janblaha application to ${TRAVIS_TAG}"
