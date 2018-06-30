@@ -28,4 +28,4 @@ hub push -u origin update-deployment-${TRAVIS_TAG}
 
 echo "creating pull request"
 git config user.name
-hub pull-request -m "Update the janblaha application to ${TRAVIS_TAG}"
+printf 'pofider\n' | hub pull-request -m "Update the janblaha application to ${TRAVIS_TAG}"
