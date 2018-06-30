@@ -55,6 +55,10 @@ app.get('/version', function(req, res) {
     res.send(require('./package.json').version)
 });
 
+app.get('/docker', function(req, res) {    
+    res.send(require('child_process').execSync('docker --version').toString())
+});
+
 
 var lastTweets;
 var lastPosts;
