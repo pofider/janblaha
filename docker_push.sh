@@ -8,6 +8,8 @@ sudo add-apt-repository -y ppa:cpick/hub
 sudo apt-get update
 sudo apt-get install -y hub
 
+hub config --global user.email "honza.pofider@seznam.cz"
+hub config --global user.name "pofider"
 hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 hub clone "pofider/kubernetes"
 cd kubernetes
