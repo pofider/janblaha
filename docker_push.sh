@@ -12,9 +12,9 @@ hub config --global user.email "honza.pofider@seznam.cz"
 hub config --global user.name "pofider"
 hub clone "https://github.com/pofider/kubernetes.git"
 cd kubernetes
-hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 
 hub checkout -b update-deployment-${TRAVIS_TAG}
+hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 
 sed -i 's/pofider\/janblaha\:\(.*\)/pofider\/janblaha\:'"$TRAVIS_TAG"'/' ./kubernetes/janblaha-staging-deployment.yaml
 hub add kubernetes/janblaha-staging-deployment.yaml
