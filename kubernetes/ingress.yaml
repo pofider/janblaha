@@ -7,6 +7,20 @@ metadata:
     nginx.ingress.kubernetes.io/limit-rps: "100"
 spec:
   rules:
+  - host: janblaha.net
+    http:  
+      paths:
+      - path: /
+        backend:
+          serviceName: janblaha
+          servicePort: 1000    
+  - host: staging.janblaha.net
+    http:  
+      paths:
+      - path: /
+        backend:
+          serviceName: janblaha-staging
+          servicePort: 1000        
   - host: janblaha.c53cd804-7e21-4dfb-8f7f-15a05c3059a1.northeurope.aksapp.io
     http:  
       paths:

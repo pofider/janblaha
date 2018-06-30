@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: janblaha-staging
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: janblaha-staging
+    spec:
+      containers:
+      - name: janblaha-staging
+        image: pofider/janblaha:tag
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 1000

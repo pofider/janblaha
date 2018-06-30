@@ -51,6 +51,10 @@ app.get('/', function(req, res) {
     });
 });
 
+app.get('/version', function(req, res) {    
+    res.send(require('./package.json').version)
+});
+
 
 var lastTweets;
 var lastPosts;
