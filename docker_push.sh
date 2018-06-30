@@ -6,7 +6,7 @@ docker push pofider/janblaha
 
 sudo add-apt-repository ppa:cpick/hub
 sudo apt-get update
-sudo apt-get install hub
+sudo apt-get install hub -y
 
  hub clone "pofder/kubernetes"
  cd kubernetes
