@@ -4,16 +4,32 @@ docker build -t janblaha .
 docker tag janblaha pofider/janblaha:$TRAVIS_TAG
 docker push pofider/janblaha
 
-AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-    sudo tee /etc/apt/sources.list.d/azure-cli.list
-curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add     
-sudo apt-get install apt-transport-https -y
-sudo apt-get update && sudo apt-get install -y azure-cli
+sudo add-apt-repository ppa:cpick/hub
+sudo apt-get update
+sudo apt-get install hub
 
-az login --service-principal --username $AZ_APP_ID --password $AZ_PASSWORD --tenant $AZ_TENANT
-sudo az aks install-cli
-sudo az aks get-credentials --resource-group test --name test
+ hub clone "pofder/kubernetes"
+ cd kubernetes
+ cat <<EOF > patch.yaml
+spec:
+    template:
+        spec:
+            containers:
+                - name: janblaha-staging
+                  image: pofider/janblaha:${TRAVIS_TAG}
+EOF
 
-sed -i 's/\$tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-staging-deployment.yaml
-sudo kubectl apply -f ./kubernetes/janblaha-staging-deployment.yaml
+kubectl patch --local -o yaml \
+          -f kubernetes/deployments/janblaha-staging-deployment.yaml \
+          -p "$(cat patch.yaml)" \
+          > janblaha-staging-deployment.yaml
+
+mv janblaha-staging-deployment.yaml kubernetes/deployments/janblaha-staging-deployment.yaml          
+
+hub add kubernetes/deployments/janblaha-staging-deployment.yaml
+
+hub commit -F- <<EOF
+    Update the janblaha application    
+EOF
+
+hub push origin master
