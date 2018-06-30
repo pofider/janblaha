@@ -14,9 +14,12 @@ hub clone "https://github.com/pofider/kubernetes.git"
 cd kubernetes
 hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 
+hub checkout -b update-deployment-${TRAVIS_TAG}
+
 sed -i 's/pofider\/janblaha\:\(.*\)/pofider\/janblaha\:'"$TRAVIS_TAG"'/' ./kubernetes/janblaha-staging-deployment.yaml
 hub add kubernetes/janblaha-staging-deployment.yaml
 
 hub commit -m "Update the janblaha application"
 
-hub push origin master
+hub push origin update-deployment-${TRAVIS_TAG}
+hub pull-request -m "Update the janblaha application to ${TRAVIS_TAG}"
