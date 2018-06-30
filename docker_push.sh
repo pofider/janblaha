@@ -10,22 +10,8 @@ sudo chmod 755 /usr/bin/hub
 
  hub clone "pofder/kubernetes"
  cd kubernetes
- cat <<EOF > patch.yaml
-spec:
-    template:
-        spec:
-            containers:
-                - name: janblaha-staging
-                  image: pofider/janblaha:${TRAVIS_TAG}
-EOF
 
-kubectl patch --local -o yaml \
-          -f kubernetes/deployments/janblaha-staging-deployment.yaml \
-          -p "$(cat patch.yaml)" \
-          > janblaha-staging-deployment.yaml
-
-mv janblaha-staging-deployment.yaml kubernetes/deployments/janblaha-staging-deployment.yaml          
-
+sed -i 's/\$tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-staging-deployment.yaml
 hub add kubernetes/deployments/janblaha-staging-deployment.yaml
 
 hub commit -F- <<EOF
