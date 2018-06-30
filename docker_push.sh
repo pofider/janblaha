@@ -23,6 +23,8 @@ hub add kubernetes/prod/janblaha-deployment.yaml
 
 hub commit -m "Update the janblaha application"
 
-hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
-hub push origin update-deployment-${TRAVIS_TAG}
+cho "push new branch"
+hub push -u origin update-deployment-${TRAVIS_TAG}
+
+cho "creating pull request"
 hub pull-request -m "Update the janblaha application to ${TRAVIS_TAG}"
