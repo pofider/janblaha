@@ -15,5 +15,5 @@ az login --service-principal --username $AZ_APP_ID --password $AZ_PASSWORD --ten
 sudo az aks install-cli
 sudo az aks get-credentials --resource-group test --name test
 
-sed -i 's/tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-staging-deployment.yaml
+sed -i 's/\$tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-staging-deployment.yaml
 sudo kubectl apply -f ./kubernetes/janblaha-staging-deployment.yaml
