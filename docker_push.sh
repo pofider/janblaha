@@ -16,10 +16,13 @@ cd kubernetes
 hub checkout -b update-deployment-${TRAVIS_TAG}
 hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 
-sed -i 's/pofider\/janblaha\:\(.*\)/pofider\/janblaha\:'"$TRAVIS_TAG"'/' ./kubernetes/janblaha-staging-deployment.yaml
-hub add kubernetes/janblaha-staging-deployment.yaml
+sed -i 's/pofider\/janblaha\:\(.*\)/pofider\/janblaha\:'"$TRAVIS_TAG"'/' ./kubernetes/staging/janblaha-staging-deployment.yaml
+sed -i 's/pofider\/janblaha\:\(.*\)/pofider\/janblaha\:'"$TRAVIS_TAG"'/' ./kubernetes/prod/janblaha-deployment.yaml
+hub add kubernetes/staging/janblaha-staging-deployment.yaml
+hub add kubernetes/prod/janblaha-deployment.yaml
 
 hub commit -m "Update the janblaha application"
 
+hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 hub push origin update-deployment-${TRAVIS_TAG}
 hub pull-request -m "Update the janblaha application to ${TRAVIS_TAG}"
