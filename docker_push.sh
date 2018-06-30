@@ -10,9 +10,9 @@ sudo apt-get install -y hub
 
 hub config --global user.email "honza.pofider@seznam.cz"
 hub config --global user.name "pofider"
-hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
-hub clone "pofider/kubernetes"
+hub clone "https://github.com/pofider/kubernetes.git"
 cd kubernetes
+hub config remote.origin.url https://pofider:${GITHUB_TOKEN}@github.com/pofider/kubernetes.git
 
 sed -i 's/\$tag/'"$TRAVIS_TAG"'/g' ./kubernetes/janblaha-staging-deployment.yaml
 hub add kubernetes/janblaha-staging-deployment.yaml
