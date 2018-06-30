@@ -4,9 +4,9 @@ docker build -t janblaha .
 docker tag janblaha pofider/janblaha:$TRAVIS_TAG
 docker push pofider/janblaha
 
-sudo add-apt-repository ppa:cpick/hub
-sudo apt-get update
-sudo apt-get install hub -y
+sudo apt-get install -y ruby
+sudo curl https://hub.github.com/standalone -Lo /usr/bin/hub
+sudo chmod 755 /usr/bin/hub
 
  hub clone "pofder/kubernetes"
  cd kubernetes
