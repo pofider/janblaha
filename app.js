@@ -56,7 +56,13 @@ app.get('/version', function(req, res) {
 });
 
 app.get('/docker', function(req, res) {    
-    res.send(require('child_process').execSync('docker --version').toString())
+    try {
+        let str = 'Running docker version' + require('child_process').execSync('docker --version').toString()
+        res.send(str)
+    } catch (e) {
+        res.send(e.toString())
+    }
+
 });
 
 
