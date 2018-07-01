@@ -4,6 +4,6 @@ docker build -t janblaha .
 docker tag janblaha pofider/janblaha:$TRAVIS_TAG
 docker push pofider/janblaha
 
-git clone https://github.com/pofider/kubernetes
+git clone https://github.com/pofider/kubernetes.git
 cd kubernetes
 ./push.sh "janblaha" "pofider/janblaha"
