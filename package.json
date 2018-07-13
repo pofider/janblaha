@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "blog",
   "main": "app.js",
   "scripts": {
